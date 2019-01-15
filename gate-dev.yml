@@ -10,15 +10,16 @@ spring:
         default-property-inclusion: non_null
     redis:
         database: 1
-        host: ${REDIS_HOST:127.0.0.1}
+        host: ${REDIS_HOST:47.97.100.93}
         port: ${REDIS_PORT:6379}
+        password: ldd2017admin
         pool:
             max-active: 20
     rabbitmq:
-        host: ${RABBIT_MQ_HOST:localhost}
+        host: ${RABBIT_MQ_HOST:47.97.100.93}
         port:  ${RABBIT_MQ_PORT:5672}
-        username: guest
-        password: guest
+        username: pitiaoke
+        password: pitiaokefadacai
     zipkin:
       enabled: true
     sleuth:
