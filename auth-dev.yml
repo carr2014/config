@@ -7,16 +7,16 @@ spring:
         default-property-inclusion: non_null
     redis:
         database: 1
-        host: ${REDIS_HOST:47.97.100.93}
+        host: ${REDIS_HOST:192.168.8.101}
         port: ${REDIS_PORT:6379}
-        password: ldd2017admin
+        password: 123456
         pool:
             max-active: 20
     datasource:
       name: test
-      url: jdbc:mysql://${MYSQL_HOST:47.97.100.93}:${MYSQL_PORT:3306}/ag_auth?useUnicode=true&characterEncoding=UTF8
+      url: jdbc:mysql://${MYSQL_HOST:192.168.8.101}:${MYSQL_PORT:3306}/ag_auth?useUnicode=true&characterEncoding=UTF8
       username: root
-      password: Aaaa1111
+      password: 123456
       # 使用druid数据源
       type: com.alibaba.druid.pool.DruidDataSource
       driver-class-name: com.mysql.jdbc.Driver
@@ -34,10 +34,10 @@ spring:
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
     rabbitmq:
-      host: ${RABBIT_MQ_HOST:47.97.100.93}
+      host: ${RABBIT_MQ_HOST:192.168.8.101}
       port:  ${RABBIT_MQ_PORT:5672}
-      username: pitiaoke
-      password: pitiaokefadacai
+      username: admin
+      password: 123456
     zipkin:
         enabled: true
     sleuth:
@@ -85,13 +85,13 @@ eureka:
         healthCheckUrlPath: /health
         # docker 部署开启,记得将IP修改为部署所在服务器的外网IP
         prefer-ip-address: true
-        ip-address: 127.0.0.1
+        ip-address: 192.168.8.101
         leaseRenewalIntervalInSeconds: 5
     client:
         serviceUrl:
-#            defaultZone: http://localhost:8761/eureka/
+            defaultZone: http://192.168.8.101:8761/eureka/
                     # docker 部署开启,记得将IP修改为部署所在服务器的外网IP
-            defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
+            #defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
 
 jwt:
   token-header: Authorization
